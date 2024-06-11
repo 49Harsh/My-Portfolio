@@ -1,0 +1,113 @@
+
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: hsl(0 0% 6%);
+  }
+  
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  main {
+    width: 80ch;
+    max-width: 100%;
+  }
+  
+  .card {
+    background: hsl(0 0% 10%);
+    width: 200px;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    transition: background 0.1s;
+  }
+  
+  .card:hover {
+    --active: 1;
+  }
+  
+  .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at var(--x) var(--y), hsl(0, 94%, 19%), transparent 15vmin);
+    background-attachment: fixed;
+    opacity: var(--active, 0);
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at var(--x) var(--y), hsl(0 0% 100% / 0.5), transparent 15vmin),
+      transparent;
+    background-attachment: fixed;
+    pointer-events: none;
+    mask:
+      linear-gradient(white, white) 50% 0 / 100% 4px no-repeat,
+      linear-gradient(white, white) 50% 100% / 100% 4px no-repeat,
+      linear-gradient(white, white) 0 50% / 4px 100% no-repeat,
+      linear-gradient(white, white) 100% 50% / 4px 100% no-repeat;
+  }
+  
+  span {
+    font-family: sans-serif, system-ui;
+    position: absolute;
+    bottom: 0.65rem;
+    right: 0.65rem;
+    font-weight: bold;
+    font-size: 2rem;
+    color: hsl(0 0% 100%);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .spotlight-card {
+    /* Your card styles */
+    position: relative;
+    /* Add other styles as needed */
+  
+    /* Spotlight effect */
+    pointer-events: none;
+  }
+  
+  .spotlight-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at var(--x, 0) var(--y, 0),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+    background-attachment: fixed;
+    opacity: var(--active, 0);
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  
