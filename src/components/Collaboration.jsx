@@ -44,7 +44,7 @@ const Collaboration = () => {
                     src={logo}
                     width={48}
                     height={48}
-                    alt="brainwave"
+                    alt="logo"
                   />
                 </div>
               </div>

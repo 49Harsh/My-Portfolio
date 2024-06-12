@@ -139,7 +139,7 @@ export const roadmap = [
 ];
 
 export const collabText =
-  " MERN stack stands for MongoDB, Express.js, React, and Node.js, which together provide an end-to-end framework for developers.";
+  "";
 
 export const collabContent = [
   {
