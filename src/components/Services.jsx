@@ -59,9 +59,9 @@ const Services = () => {
       text="------------------------------------------------------------"
     />
 
-    <div className="relative">
+    <div className="relative overflow-hidden">
     
-      <div className="relative z-1 flex flex-col lg:flex-row items-center h-auto lg:h-[39rem] mb-5 p-4 lg:p-8 border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
+      <div className="relative z-1 flex flex-col lg:flex-row mx-[10px] items-center h-auto w-full lg:h-[39rem] mb-5 p-4  border border-n-1/10 rounded-3xl overflow-hidden lg:p-20 xl:h-[46rem]">
 
       {/* bg image */}
       <div class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
