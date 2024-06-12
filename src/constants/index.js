@@ -320,7 +320,7 @@ export const benefits = [
   {
     id: "4",
     title: "Work in progress",
-    text: "Lets users quickly find answers to their questions without having to search through multiple sources.",
+    text: "Project",
     backgroundUrl: "./src/assets/benefits/card-5.svg",
     iconUrl: benefitIcon1,
     imageUrl: benefitImage2,
@@ -328,7 +328,7 @@ export const benefits = [
   {
     id: "5",
     title: "Work in progress",
-    text: "The app uses natural language processing to understand user queries and provide accurate and relevant responses.",
+    text: "Project 2",
     backgroundUrl: "./src/assets/benefits/card-6.svg",
     iconUrl: benefitIcon2,
     imageUrl: benefitImage2,
