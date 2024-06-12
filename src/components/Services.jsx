@@ -80,7 +80,7 @@ const Services = () => {
             <label className="">Message</label>
             <textarea name="message" className="bg-[#5eead4] border border-n-1/10 rounded-3xl bg-opacity-10 px-3 py-2 h-32" />
             
-            <Button type="submit" value="Send" className=" w-full lg:w-[90px] mx-auto mt-4" href="#login">
+            <Button type="submit" value="Send" className=" w-[90px] mx-auto mt-4" href="#login">
             <input type="submit" value="Send" className=" w-full h-full "   />
             </Button>
           </form>
