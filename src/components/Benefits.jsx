@@ -5,15 +5,24 @@ import Arrow from "../assets/svg/Arrow";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import Tilt from "react-parallax-tilt";
+import Typewriter from "./Typewriter";
 
 const Benefits = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
-        <Heading
+        {/* <Heading
           className="md:max-w-md lg:max-w-2xl"
           title="Here I have mentioned some of my projects"
-        />
+        /> */}
+
+        <div className="md:max-w-md lg:max-w-2xl mx-auto my-2" >
+          <Typewriter />
+        </div>
+      
+          
+       
+        
 
         <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
