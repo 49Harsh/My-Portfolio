@@ -46,27 +46,26 @@ const Benefits = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {benefits.map((item) => (
             <Tilt key={item.id} tiltMaxAngleX={5} tiltMaxAngleY={5}>
-              <div
-                className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] h-full group"
-                style={{
-                  backgroundImage: `url(${item.backgroundUrl})`,
-                }}
-              >
-                <div className="relative z-2 flex flex-col h-full bg-gradient-to-b from-n-8/90 to-n-8/90 backdrop-blur-sm p-6 rounded-xl border border-n-6/50 transition-colors duration-300">
-                  {/* Hover effects */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-n-6/50 to-n-6/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-                  
-                  {/* Card content */}
+              <div className="relative group">
+                {/* Animated border with breathing effect only on hover */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 rounded-xl opacity-20 blur transition-all duration-500 group-hover:animate-breathing"></div>
+                
+                {/* Main card content */}
+                <div className="relative flex flex-col h-full bg-n-8/90 backdrop-blur-sm p-6 rounded-xl border border-n-6/50 transition-all duration-500">
                   <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-4">
-                      <img
-                        src={item.iconUrl}
-                        width={32}
-                        height={32}
-                        alt={item.title}
-                        className="rounded-full bg-n-7 p-1 ring-1 ring-n-1/10"
-                      />
-                      <h5 className="h5 text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-slate-200/90 to-slate-200/90">{item.title}</h5>
+                      <div className="relative">
+                        {/* Icon glow effect only on hover */}
+                        <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-50 blur-md transition-all duration-500"></div>
+                        <img
+                          src={item.iconUrl}
+                          width={32}
+                          height={32}
+                          alt={item.title}
+                          className="relative rounded-full bg-n-7 p-1 ring-1 ring-n-1/10"
+                        />
+                      </div>
+                      <h5 className="h5 text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-slate-200/90 via-cyan-200/90 to-slate-200/90">{item.title}</h5>
                     </div>
                     <p className="body-2 mb-4 text-sm text-n-3/90 flex-grow">{item.text}</p>
                     <div className="flex items-center mt-auto pt-4 border-t border-n-6">
@@ -80,18 +79,14 @@ const Benefits = () => {
                     </div>
                   </div>
 
-                  {/* Decorative elements */}
-                  <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-                    <div className="absolute top-0 left-0 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-n-1/15 to-transparent"></div>
-                    <div className="absolute top-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-transparent via-n-1/15 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-n-1/15 to-transparent"></div>
-                    <div className="absolute bottom-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-transparent via-n-1/15 to-transparent"></div>
+                  {/* Decorative corners - only visible on hover */}
+                  <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute top-0 left-0 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
+                    <div className="absolute top-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-transparent via-purple-500/20 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 w-1/3 h-[1px] bg-gradient-to-r from-transparent via-pink-500/20 to-transparent"></div>
+                    <div className="absolute bottom-0 right-0 w-1/3 h-[1px] bg-gradient-to-l from-transparent via-cyan-500/20 to-transparent"></div>
                   </div>
                 </div>
-
-                {item.light && <GradientLight />}
-
-                <ClipPath />
               </div>
             </Tilt>
           ))}

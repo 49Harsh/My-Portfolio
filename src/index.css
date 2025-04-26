@@ -6,11 +6,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-sora: "Sora", sans-serif;
-  --font-code: "Source Code Pro", monospace;
-  --font-grotesk: "Space Grotesk", sans-serif;
-  color-scheme: dark;
+@layer base {
+  body {
+    @apply font-sans bg-n-8 text-n-1 text-base;
+  }
+
+  :root {
+    --font-sora: "Sora", sans-serif;
+    --font-code: "Source Code Pro", monospace;
+    --font-grotesk: "Space Grotesk", sans-serif;
+    color-scheme: dark;
+    --color-1: 255 115 179;
+    --color-2: 111 147 255;
+    --color-3: 255 199 0;
+    --color-4: 255 115 179;
+    --color-5: 111 147 255;
+  }
 }
 
 * {
@@ -85,4 +96,42 @@
 
 .-rotate-360 {
   @apply rotate-[-360deg]
+}
+
+@layer utilities {
+  .rotate-border {
+    animation: spin 3s linear infinite;
+  }
+
+  .rotate-border-fast {
+    animation: spin 1s linear infinite;
+  }
+
+  .animate-breathing {
+    animation: breathing 3s ease-in-out infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
 }
