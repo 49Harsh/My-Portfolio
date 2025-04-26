@@ -11,6 +11,7 @@ import { useState } from "react";
 
 const Benefits = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
 
   const handleProjectClick = (project) => {
     if (project.links) {
@@ -18,6 +19,14 @@ const Benefits = () => {
     } else if (project.url) {
       window.open(project.url, '_blank');
     }
+  };
+
+  const toggleDescription = (id, e) => {
+    e.stopPropagation(); // Prevent triggering card click
+    setExpandedDescriptions(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
   };
 
   return (
@@ -51,24 +60,36 @@ const Benefits = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 via-cyan-500 to-pink-500 rounded-xl opacity-20 blur transition-all duration-500 group-hover:animate-breathing"></div>
                 
                 {/* Main card content */}
-                <div className="relative flex flex-col h-full bg-n-8/90 backdrop-blur-sm p-6 rounded-xl border border-n-6/50 transition-all duration-500">
+                <div className="relative flex flex-col min-h-[18rem] bg-n-8/90 backdrop-blur-sm p-5 rounded-xl border border-n-6/50 transition-all duration-500">
                   <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-3">
                       <div className="relative">
                         {/* Icon glow effect only on hover */}
                         <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-50 blur-md transition-all duration-500"></div>
                         <img
                           src={item.iconUrl}
-                          width={32}
-                          height={32}
+                          width={28}
+                          height={28}
                           alt={item.title}
                           className="relative rounded-full bg-n-7 p-1 ring-1 ring-n-1/10"
                         />
                       </div>
-                      <h5 className="h5 text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-slate-200/90 via-cyan-200/90 to-slate-200/90">{item.title}</h5>
+                      <h5 className="h5 text-base font-semibold bg-clip-text text-transparent bg-gradient-to-r from-slate-200/90 via-cyan-200/90 to-slate-200/90">{item.title}</h5>
                     </div>
-                    <p className="body-2 mb-4 text-sm text-n-3/90 flex-grow">{item.text}</p>
-                    <div className="flex items-center mt-auto pt-4 border-t border-n-6">
+                    <div className="min-h-[6rem]">
+                      <p className={`body-2 text-sm text-n-3/90 ${!expandedDescriptions[item.id] ? 'line-clamp-3' : ''}`}>
+                        {item.text}
+                      </p>
+                      {item.text.length > 120 && (
+                        <button 
+                          onClick={(e) => toggleDescription(item.id, e)}
+                          className="mt-1 text-xs font-bold text-color-1 hover:text-color-2 transition-colors"
+                        >
+                          {expandedDescriptions[item.id] ? 'Show less' : 'See more'}
+                        </button>
+                      )}
+                    </div>
+                    <div className="flex items-center mt-3 pt-3 border-t border-n-6">
                       <button 
                         onClick={() => handleProjectClick(item)}
                         className="ml-auto font-code text-xs font-bold text-n-1 uppercase tracking-wider cursor-pointer hover:text-color-1 transition-colors flex items-center group/btn"
