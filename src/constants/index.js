@@ -51,7 +51,7 @@ export const navigation = [
   {
     id: "0",
     title: "Home",
-    url: "#Project",
+    url: "#hero",
   },
   {
     id: "1",
@@ -144,44 +144,68 @@ export const collabText =
 export const collabContent = [
   {
     id: "0",
-    title: "JavaScript & TypeScript",
-    text: "Modern web development with strong typing",
+    category: "Programming",
+    title: "Languages & Core",
+    skills: ["JavaScript", "TypeScript", "Python", "C++"],
+    icon: javascript,
+    text: "Strong foundation in multiple programming paradigms"
   },
   {
     id: "1",
-    title: "React.js & Next.js",
-    text: "Frontend development with modern frameworks",
+    category: "Frontend",
+    title: "Frontend Development",
+    skills: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind", "Bootstrap"],
+    icon: React,
+    text: "Modern web development with responsive design"
   },
   {
     id: "2",
-    title: "Node.js & Express.js",
-    text: "Backend development and RESTful APIs",
+    category: "Animation",
+    title: "Motion & Graphics",
+    skills: ["Framer Motion", "GSAP", "Chart.js", "D3.js"],
+    icon: framer,
+    text: "Creating engaging user experiences with animations"
   },
   {
     id: "3",
-    title: "MongoDB & SQL",
-    text: "Database management and optimization",
+    category: "Backend",
+    title: "Backend & APIs",
+    skills: ["Node.js", "Express.js", "RESTful APIs", "WebSocket"],
+    icon: nodejs,
+    text: "Scalable server-side solutions and API development"
   },
   {
     id: "4",
-    title: "Tailwind & UI Libraries",
-    text: "Modern styling with Shadcn, Bootstrap",
+    category: "State",
+    title: "State Management",
+    skills: ["Redux Toolkit", "Context API", "Zustand"],
+    icon: redux,
+    text: "Efficient state management for complex applications"
   },
   {
     id: "5",
-    title: "Animation Libraries",
-    text: "GSAP, Framer Motion for smooth animations",
+    category: "Database",
+    title: "Databases",
+    skills: ["MongoDB", "MySQL", "PostgreSQL"],
+    icon: mongodb,
+    text: "Working with both SQL and NoSQL databases"
   },
   {
     id: "6",
+    category: "DevOps",
     title: "DevOps & Tools",
-    text: "Git, Docker, Postman, VS Code",
+    skills: ["Git", "Docker", "Kubernetes", "CI/CD"],
+    icon: Docker,
+    text: "Modern deployment and development workflows"
   },
   {
     id: "7",
-    title: "Python & C++",
-    text: "Backend and algorithm development",
-  },
+    category: "Learning",
+    title: "Currently Learning",
+    skills: ["Next.js (Advanced)", "React Native", "Kubernetes"],
+    icon: plusSquare,
+    text: "Continuously expanding technical knowledge"
+  }
 ];
 
 export const collabApps = [
@@ -396,11 +420,5 @@ export const socials = [
     title: "Telegram",
     iconUrl: telegram,
     url: "#",
-  },
-  {
-    id: "4",
-    title: "Facebook",
-    iconUrl: facebook,
-    url: "#",
-  },
+  }
 ];
