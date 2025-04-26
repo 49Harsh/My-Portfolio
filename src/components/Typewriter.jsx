@@ -3,19 +3,26 @@ import { TypeAnimation } from 'react-type-animation';
 
 const Typewriter = () => {
   return (
-    <TypeAnimation className="w-full sm:w-3/4 md:max-w-md lg:max-w-2xl"
+    <TypeAnimation
+      className="text-2xl md:text-3xl font-bold text-center"
       sequence={[
-        'Here are some of my projects:',
+        'Featured Projects',
         1000,
-        'MERN stack development',
+        'Recent Work',
         1000,
-        'Python with pandas and matplotlib',
+        'Portfolio Highlights',
         1000,
       ]}
-      wrapper="span"
+      wrapper="h2"
       cursor={true}
       repeat={Infinity}
-      style={{ fontSize: '2em', display: 'inline-block', height: '20vh' ,width: 'auto'}}
+      style={{ 
+        display: 'block',
+        marginBottom: '1rem',
+        background: 'linear-gradient(to right, #fff, #a5a5a5)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent'
+      }}
     />
   );
 };

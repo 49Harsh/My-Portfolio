@@ -29,8 +29,7 @@ const Hero = () => {
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
         
           <h1 className="h1 mb-6">
-          Hello! I’m a passionate full-stack developer. My name is {` `}
-            {/* Explore the Possibilities of&nbsp;AI&nbsp;Chatting with {` `} */}
+            Hello! I'm a Full Stack Developer {` `}
             <span className="inline-block relative">
               Harsh Yadav{" "}
               <img
@@ -43,8 +42,9 @@ const Hero = () => {
             </span>
           </h1>
           <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-          I’m a MERN stack developer: Proficient in MongoDB, Express.js, React, and Node.js.
-           Full-stack capabilities and efficient workflow
+            Experienced in MERN stack development with expertise in React.js, Next.js, Node.js, and Express.js.
+            Proficient in building responsive web applications with modern UI libraries and animation frameworks.
+            Currently exploring advanced Next.js features and diving into React Native development.
           </p>
           {/* <Button href="/pricing" white>
             Get started
