@@ -12,11 +12,10 @@ const Notification = ({ className, title }) => {
         src={notification1}
         width={62}
         height={62}
-        alt="image"
+        alt="Notification preview"
         className="rounded-xl"
       />
-
-      <div className="flex-1">
+      <div>
         <h6 className="mb-1 font-semibold text-base">{title}</h6>
 
         <div className="flex items-center justify-between">

@@ -1,9 +1,6 @@
 import { benefits } from "../constants";
-import Heading from "./Heading";
 import Section from "./Section";
 import Arrow from "../assets/svg/Arrow";
-import { GradientLight } from "./design/Benefits";
-import ClipPath from "../assets/svg/ClipPath";
 import Tilt from "react-parallax-tilt";
 import Typewriter from "./Typewriter";
 import ProjectLinks from "./ProjectLinks";

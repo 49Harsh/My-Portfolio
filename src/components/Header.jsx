@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import logo from '../image/logo.png'
@@ -11,7 +10,6 @@ import { HamburgerMenu } from "./design/Header";
 import ContactPopup from "./ContactPopup";
 
 const Header = () => {
-  const pathname = useLocation();
   const [openNavigation, setOpenNavigation] = useState(false);
   const [showContactPopup, setShowContactPopup] = useState(false);
 
