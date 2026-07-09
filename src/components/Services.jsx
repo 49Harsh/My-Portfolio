@@ -3,6 +3,7 @@ import Heading from "./Heading";
 
 import Tilt from "react-parallax-tilt";
 import Button from "./Button";
+import { Toaster, toast } from "react-hot-toast";
 
 import { Gradient } from "./design/Services";
 
@@ -49,16 +50,19 @@ const Services = () => {
         results[1].status === "fulfilled" && results[1].value?.success;
 
       if (emailjsOk || web3formsOk) {
-        setResult("Message sent!");
+        setResult("Message sent successfully.");
+        toast.success("Your message has been sent successfully.", { position: "bottom-center" });
         form.current.reset();
       } else {
         console.log("EmailJS error:", results[0]);
         console.log("Web3Forms error:", results[1]);
-        setResult("Something went wrong, please try again.");
+        setResult("Unable to send your message. Please try again later.");
+        toast.error("Unable to send your message. Please try again later.", { position: "bottom-center" });
       }
     } catch (error) {
       console.log("Unexpected error:", error);
-      setResult("Something went wrong, please try again.");
+      setResult("Unable to send your message. Please try again later.");
+      toast.error("Unable to send your message. Please try again later.", { position: "bottom-center" });
     } finally {
       setSending(false);
     }
@@ -67,6 +71,7 @@ const Services = () => {
   return (
     <Section id="how-to-use">
       <div className="container mx-auto px-4">
+        <Toaster position="bottom-center" reverseOrder={false} />
         <Heading
           title="If you have any kind of query, you can email me. Thank you.'"
           text="------------------------------------------------------------"
